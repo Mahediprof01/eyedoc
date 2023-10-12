@@ -1,12 +1,28 @@
-import React, { useState } from 'react'
-import { database } from './Fbconfig';
-import {createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'firebase/auth'
+import React, { useEffect, useState } from 'react'
+import { database ,provider} from './Fbconfig';
+import {GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword,signInWithPopup} from 'firebase/auth'
 import { useNavigate } from 'react-router-dom';
 import logineye from '../src/img/logineye.png'
+import Home from './Home';
 
 function Loginn() {
+
+  /* Hooks */
+    const [isloggedin,setIsloggedin]= useState(false)
     const [login,setLogin] = useState(false);
     const history = useNavigate()
+
+    const googleSign = ()=>{
+      signInWithPopup(database,provider).then((result)=>{
+        const user = result.user;
+        setIsloggedin(true)
+      }).catch((err)=>{
+        const errorCode = err.code;
+        const errorMessage = err.message;
+        const email = err.customData.email;
+        const credential = GoogleAuthProvider.credentialFromError(err);
+      })
+    }
     const handleSubmit = (e,type)=>{
         e.preventDefault();
         const email = e.target.email.value;
@@ -27,8 +43,7 @@ function Loginn() {
                 alert(err.code)
             })
         }
-        
-       
+
     }
   return (
     <>
@@ -51,6 +66,16 @@ function Loginn() {
                   <div className="text-center mb-4">
                   <button className='btn-doc2'>{login?'sign In':'sign Up'}</button>
                   </div>   
+                  {/* Google sign in */}
+                  <div className="text-center mb-4">
+                  if{!isloggedin && 
+                    <button onClick={googleSign} className='btn-doc2'>Sign In With Google</button>
+                  }else
+                  {isloggedin &&
+                    history('/home')
+                  }
+                  </div> 
+                    
          </form>
             </div>
             <div className="col-md-6 border-color">

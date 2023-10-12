@@ -5,7 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import eye1 from '../src/img/eye1.png';
 import eye2 from '../src/img/eye2.png';
-import naveye from '../src/img/naveye.png'
+import navgg from '../src/img/navgg.png'
+import { FcCameraIdentification } from "react-icons/fc";
 
 
 
@@ -21,6 +22,10 @@ function Home() {
     const about2 = useRef(null);
     const service1 = useRef(null);
     const contact1 = useRef(null);
+
+    const result = ()=>{
+      alert("You have Diabetics")
+    }
 
     const scrollThat=(e)=>{
       window.scrollTo(
@@ -41,7 +46,7 @@ function Home() {
                     <div className="col-10 mx-auto nav-border">
                       <nav className="navbar navbar-expand-lg p-4">
                         <div className="container-fluid ">
-                            <NavLink className="navbar-brand text-white" to="/home"> <img className='img-fluid' src={naveye} alt="" />EYE DOCTOR</NavLink>
+                            <NavLink className="navbar-brand text-white" to="/home"> <img className='img-fluid' src={navgg} alt="" />GLUCO Guard</NavLink>
                             <button className="navbar-toggler bg-white text-color" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                             </button>
@@ -77,12 +82,12 @@ function Home() {
                 <div className="col-10 mx-auto nav-border">
                   <div className="row p-4 ">
                     <div className="col-md-6 col-10 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center alogn ">
-                      <h1 className='my-3 text-color'><strong>Eye Doctor</strong></h1>
+                      <h1 className='my-3 text-color'><strong>Gluco Guard</strong></h1>
                       <h4 className='my-3 text-white'>
-                        It simplifies the process of dealing with diabetic retinopathy.
+                        It simplifies the process of dealing with diabetic detection for women.
                       </h4>
                       <div className="my-3">
-                        <NavLink onClick={()=>scrollThat(service1)}  className='btn-doc' to="#">Test you eyes</NavLink>
+                        <NavLink onClick={()=>scrollThat(service1)}  className='btn-doc' to="#">Test you Blood</NavLink>
                       </div>
                     </div>
                     <div className="col-md-6 col-10 pt-5 pt-lg-0 order-1 order-lg-2">
@@ -103,10 +108,10 @@ function Home() {
                   <img className='img-fluid animated' src={eye2} alt="#" />
                 </div>
               <div className="col-md-6 col-10 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-              <h2 className='text-color my-3'><strong>About Eye Doctor</strong></h2>
+              <h2 className='text-color my-3'><strong>About Gluco Guard</strong></h2>
               <h3 className='text-white my-3'><strong>It's a website based on <span className='text-color'>machine learning</span></strong></h3>
               <p className="text-white my-3">
-              It detects Diabetic Retinopathy.The "EyeDoctor" simplifies the process of dealing with diabetic retinopathy. In this website people with diabetics and healthcare providers easily upload retinal images.
+              Our machine learning project aims to develop a sophisticated diagnostic tool specifically designed for detecting diabetes in women. By analyzing a comprehensive dataset of female patients, we employ advanced algorithms to identify early indicators and risk factors, ultimately empowering healthcare professionals with a precise and timely screening tool for female diabetes patients.
               </p>
                 </div>
               </div>
@@ -119,17 +124,46 @@ function Home() {
       <div className="container-fluid">
           <div className="row">
             <div className="col-10 mx-auto nav-border">
-            <h3 className='text-color text-center mt-3'>Upload an image to Test your eyes</h3>
+            <h3 className='text-color text-center mt-3'>Fill Those data field to get result</h3>
               <div className="row p-4">
               <div className="col-md-6 col-10 mx-auto">
-                <div className="card p-4">
-                  {/* <img src="..." class="card-img-top" alt="..."/> */}
-                  <div className="card-body text-center">
-                    <h5 className="card-title mb-4">Card title</h5>
-                    <NavLink href="#" className="btn-doc">Upload Image</NavLink>
-                    <h6 className='mt-3'>or drop a file</h6>
+              <form>
+                  <div className="mb-3 text-color">
+                    <label  className="form-label">Pregnancies</label>
+                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
                   </div>
-                </div>
+                  <div className="mb-3 text-color">
+                    <label  className="form-label">Glucose</label>
+                    <input type="password" className="form-control" id="exampleInputPassword1"/>
+                  </div>
+                  <div className="mb-3 text-color">
+                    <label  className="form-label">Blood Pressure</label>
+                    <input type="password" className="form-control" id="exampleInputPassword1"/>
+                  </div>
+                  <div className="mb-3 text-color">
+                    <label  className="form-label">Skin Thickness</label>
+                    <input type="password" className="form-control" id="exampleInputPassword1"/>
+                  </div>
+                  <div className="mb-3 text-color">
+                    <label  className="form-label">Insulin</label>
+                    <input type="password" className="form-control" id="exampleInputPassword1"/>
+                  </div>
+                  <div className="mb-3 text-color">
+                    <label  className="form-label">BMI</label>
+                    <input type="password" className="form-control" id="exampleInputPassword1"/>
+                  </div>
+                  <div className="mb-3 text-color">
+                    <label  className="form-label">Diabeticspedigreefunction</label>
+                    <input type="password" className="form-control" id="exampleInputPassword1"/>
+                  </div>
+                  <div className="mb-3 text-color">
+                    <label  className="form-label">Age</label>
+                    <input type="password" className="form-control" id="exampleInputPassword1"/>
+                  </div>
+                  <div className="mt-3  text-center">
+                  <NavLink onClick={result} type="submit" className="btn-doc">Submit</NavLink>
+                  </div>
+                </form>
               </div>
               </div>
             </div>
