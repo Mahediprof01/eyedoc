@@ -81,7 +81,7 @@ function Home() {
               <div className="row">
                 <div className="col-10 mx-auto nav-border">
                   <div className="row p-4 ">
-                    <div className="col-md-6 col-10 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center alogn ">
+                    <div  className="col-md-6 col-10 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center alogn ">
                       <h1 className='my-3 text-color'><strong>Gluco Guard</strong></h1>
                       <h4 className='my-3 text-white'>
                         It simplifies the process of dealing with diabetic detection for women.
@@ -90,7 +90,7 @@ function Home() {
                         <NavLink onClick={()=>scrollThat(service1)}  className='btn-doc' to="#">Test you Blood</NavLink>
                       </div>
                     </div>
-                    <div className="col-md-6 col-10 pt-5 pt-lg-0 order-1 order-lg-2">
+                    <div data-aos="fade-right" className="col-md-6 col-10 pt-5 pt-lg-0 order-1 order-lg-2">
                       <img className='img-fluid animated' src={eye1}  alt="#" />
                     </div>
                   </div>
@@ -104,13 +104,13 @@ function Home() {
           <div className="row">
             <div className="col-10 mx-auto nav-border">
               <div className="row p-4">
-              <div className="col-md-6 col-10p pt-5 pt-lg-0 order-1 order-lg-1">
+              <div data-aos="fade-right" className="col-md-6 col-10p pt-5 pt-lg-0 order-1 order-lg-1">
                   <img className='img-fluid animated' src={eye2} alt="#" />
                 </div>
               <div className="col-md-6 col-10 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
               <h2 className='text-color my-3'><strong>About Gluco Guard</strong></h2>
-              <h3 className='text-white my-3'><strong>It's a website based on <span className='text-color'>machine learning</span></strong></h3>
-              <p className="text-white my-3">
+              <h3  className='text-white my-3'><strong>It's a website based on <span className='text-color'>machine learning</span></strong></h3>
+              <p data-aos="fade-right" className="text-white my-3">
               Our machine learning project aims to develop a sophisticated diagnostic tool specifically designed for detecting diabetes in women. By analyzing a comprehensive dataset of female patients, we employ advanced algorithms to identify early indicators and risk factors, ultimately empowering healthcare professionals with a precise and timely screening tool for female diabetes patients.
               </p>
                 </div>
@@ -120,13 +120,13 @@ function Home() {
         </div>
       </section>
       {/* Service Section */}
-      <section ref={service1}  className='about-header'>
+      <section ref={service1}  className='about-header' >
       <div className="container-fluid">
           <div className="row">
             <div className="col-10 mx-auto nav-border">
             <h3 className='text-color text-center mt-3'>Fill Those data field to get result</h3>
               <div className="row p-4">
-              <div className="col-md-6 col-10 mx-auto">
+              <div className="col-md-6 col-10 mx-auto" data-aos="fade-in">
               <form>
                   <div className="mb-3 text-color">
                     <label  className="form-label">Pregnancies</label>
@@ -177,7 +177,7 @@ function Home() {
             <div className="col-10 mx-auto nav-border">
             <h3 className='text-color text-center mt-3'>Contact Us</h3>
               <div className="row p-4">
-              <div className="col-md-6 col-10 col mx-auto">
+              <div className="col-md-6 col-10 col mx-auto" data-aos="fade-right">
               <form>
                   <div className="mb-3 text-color">
                     <label  className="form-label">Email address</label>
